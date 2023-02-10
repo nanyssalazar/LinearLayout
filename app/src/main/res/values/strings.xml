@@ -3,4 +3,6 @@
     <string name="dame_un_numero">Dame un numero</string>
     <string name="suma">Suma</string>
     <string name="resta">Resta</string>
+    <string name="multiplicar">Multiplicar</string>
+    <string name="division">División</string>
 </resources>

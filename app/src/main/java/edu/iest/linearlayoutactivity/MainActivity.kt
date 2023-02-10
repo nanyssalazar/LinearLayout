@@ -11,6 +11,8 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
 
     private var bnSuma : Button? = null
     private var bnResta : Button? = null
+    private var bnMultiplicar : Button? = null
+    private var bnDivision : Button? = null
     private var etNumeroPrimero: EditText? = null
     private var etNumeroSegundo: EditText? = null
 
@@ -23,6 +25,8 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
     private fun inicializarVistas(){
         bnSuma =findViewById(R.id.bnSuma)
         bnResta = findViewById(R.id.bnResta)
+        bnMultiplicar = findViewById(R.id.bnMultiplicar)
+        bnDivision = findViewById(R.id.bnDivision)
         etNumeroPrimero = findViewById(R.id.etNumeroPrimero)
         etNumeroSegundo = findViewById(R.id.etNumeroSegundo)
     }
@@ -30,6 +34,8 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
     private fun asignarEventos(){
         bnSuma?.setOnClickListener(this)
         bnResta?.setOnClickListener(this)
+        bnMultiplicar?.setOnClickListener(this)
+        bnDivision?.setOnClickListener(this)
     }
 
     override fun onClick(miVista: View?) {
@@ -52,6 +58,16 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
             R.id.bnResta -> {
                 val resta = aritmetica.resta(numeroUno,numeroDos)
                 val mensaje =Mensajes("El resultado es $resta",this)
+                mensaje.mostrarSnackbar(miVista)
+            }
+            R.id.bnMultiplicar -> {
+                val multiplicacion = aritmetica.multiplicacion(numeroUno,numeroDos)
+                val mensaje =Mensajes("El resultado es $multiplicacion",this)
+                mensaje.mostrarSnackbar(miVista)
+            }
+            R.id.bnDivision -> {
+                val division = aritmetica.division(numeroUno,numeroDos)
+                val mensaje =Mensajes("El resultado es $division",this)
                 mensaje.mostrarSnackbar(miVista)
             }
         }
